@@ -15,6 +15,7 @@ public class HelloControler {
 
     @GetMapping(value = "/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "ht") String name){
+        System.out.println("我 是 feign");
         return feignServiceHi.sayHiFromServiceClient(name);
     }
 }
